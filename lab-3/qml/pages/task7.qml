@@ -38,14 +38,25 @@ Item {
         color: 'black'
     }
 
-    Button {
-        y: 100
-        x: 150
-        text: 'Сложить'
+    TextField {
+            id: resultField
+            y: 100
+            width: 300
+            height: 120
+            color: 'black'
+        }
 
-        onClicked: console.log(parseInt(field_1.text) + parseInt(field_2.text))
-    }
+        Button {
+            y: 250
+            x: 150
+            text: 'Сложить'
+
+            onClicked: {
+                var result = parseInt(field_1.text) + parseInt(field_2.text);
+                resultField.text = result.toString();
+            }
 
 
+}
 }
 }

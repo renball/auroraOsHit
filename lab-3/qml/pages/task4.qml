@@ -7,7 +7,7 @@ Page {
 
 
     property int cubeSize: 150
-    property int dur: 2000
+
 
 
     PageHeader {

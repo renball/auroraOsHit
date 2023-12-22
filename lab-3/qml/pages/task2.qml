@@ -7,7 +7,7 @@ Page {
 
 
     property int cubeSize: 150
-    property int dur: 2000
+
 
 
     PageHeader {
@@ -16,38 +16,43 @@ Page {
 
     }
 
-Item {
+    Item {
 
-    Rectangle {
-        x: 100
+        x: 0
         y: 150
-        color: 'red'
-        width: cubeSize
-        height: cubeSize
-    }
 
-    Rectangle {
-        x: 250
-        y: 225
-        color: 'green'
-        width: cubeSize
-        height: cubeSize
-    }
+        width: parent.width // Расшириться по ширине родительского контейнера
+        height: parent.height  // Расшириться по высоте родительского контейнера
 
-    Rectangle {
-        x: 350
-        y: 150
-        color: 'blue'
-        width: cubeSize
-        height: cubeSize
-
-        Text {
-            x: 15
-            y: 50
-            text: 'квадрат'
-            color: 'white'
+        Rectangle {
+            x: 0 // Начало координат по оси X внутри родительского контейнера
+            y: 0 // Начало координат по оси Y внутри родительского контейнера
+            color: 'red'
+            width: parent.width / 3 // Треть ширины родительского контейнера
+            height: parent.height/6
         }
 
+        Rectangle {
+            x: parent.width / 3 // Начало координат для второго прямоугольника
+            y: 125
+            color: 'green'
+            width: parent.width / 3
+            height: parent.height/6
+        }
+
+        Rectangle {
+            x: (2 * parent.width / 3) -50 // Начало координат для третьего прямоугольника
+            y: 0
+            color: 'blue'
+            Text {
+                x: parent.width / 4
+                y: parent.height/3
+                text: 'квадрат'
+                color: 'white'
+            }
+            width: parent.width / 3
+            height: parent.height/6
+        }
     }
 }
-}
+
